@@ -4,25 +4,41 @@ DirectoryIndex index.html
   RewriteEngine On
   RewriteBase /
 
+  # Ensure _next folder is accessible
+  RewriteRule ^_next/(.*)$ _next/$1 [L]
+
   # Redirect /index.html to /
   RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
   RewriteRule ^index\.html$ / [R=301,L]
 
-  # If the request is for a file or directory that exists, serve it
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
-  RewriteCond %{REQUEST_FILENAME} -d
+  # If the request is for an actual file, serve it
+  RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
 
-  # If trailingSlash: true is used in next.config.ts, we need to handle subfolder index.html files
-  # This rule checks if a directory/index.html exists for a request and serves it
+  # If trailingSlash: true is used, check for directory/index.html
   RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
   RewriteRule ^(.*)/?$ $1/index.html [L]
 
-  # Fallback: Send everything else to index.html for client-side routing
+  # Clean URLs: handle cases without trailing slash
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+
+  # SPA Fallback for client-side routing
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [L]
 </IfModule>
 
 ErrorDocument 404 /404.html
+
+# Security: Allow access to _next directory (some hosts block it)
+<IfModule mod_authz_core.c>
+  <FilesMatch "^_next">
+    Require all granted
+  </FilesMatch>
+</IfModule>
 
 # Cache static assets aggressively
 <IfModule mod_expires.c>
