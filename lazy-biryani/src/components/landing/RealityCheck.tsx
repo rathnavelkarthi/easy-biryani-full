@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
-
 const rows = [
   {
     option: "Swiggy/Zomato",
@@ -50,13 +48,7 @@ export function RealityCheck() {
         </h2>
 
         {/* Desktop table */}
-        <motion.div
-          className="hidden sm:block"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
+        <div className="hidden sm:block animate-in fade-in slide-in-from-bottom-4 duration-500">
           <table className="w-full border-4 border-[#333333] brutalist-shadow">
             <thead>
               <tr className="bg-[#333333] text-white">
@@ -101,16 +93,10 @@ export function RealityCheck() {
               ))}
             </tbody>
           </table>
-        </motion.div>
+        </div>
 
         {/* Mobile card layout */}
-        <motion.div
-          className="sm:hidden flex flex-col gap-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
+        <div className="sm:hidden flex flex-col gap-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
           {rows.map((row) => (
             <div
               key={row.option}
@@ -161,7 +147,7 @@ export function RealityCheck() {
               </div>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

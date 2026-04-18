@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { BrutalistButton } from "@/components/ui/BrutalistButton";
 
 export function CTASection() {
@@ -14,13 +13,7 @@ export function CTASection() {
       <div className="hidden md:block absolute top-12 left-12 w-16 h-16 border-t-4 border-l-4 border-primary/20" />
       <div className="hidden md:block absolute bottom-12 right-12 w-16 h-16 border-b-4 border-r-4 border-primary/20" />
 
-      <motion.div
-        className="max-w-4xl mx-auto text-center"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
+      <div className="max-w-4xl mx-auto text-center animate-in fade-in slide-in-from-bottom-5 duration-700">
         <h2 className="font-[family-name:var(--font-plus-jakarta-sans)] text-3xl sm:text-4xl md:text-7xl font-black text-on-surface tracking-tighter mb-3 sm:mb-4">
           Stop scrolling.
           <br />
@@ -54,13 +47,7 @@ export function CTASection() {
         </div>
 
         {/* Social proof nudge */}
-        <motion.div
-          className="mt-6 sm:mt-8 inline-flex items-center gap-3 bg-surface-container border-2 border-[#333333] px-4 py-2"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-        >
+        <div className="mt-6 sm:mt-8 inline-flex items-center gap-3 bg-surface-container border-2 border-[#333333] px-4 py-2 animate-in fade-in duration-500 delay-500 fill-mode-both">
           <div className="flex -space-x-2">
             {[0, 1, 2].map((i) => (
               <div
@@ -74,8 +61,8 @@ export function CTASection() {
           <span className="text-xs sm:text-sm font-bold text-on-surface-variant">
             <strong className="text-on-surface">127 Chennai students</strong> joined today
           </span>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

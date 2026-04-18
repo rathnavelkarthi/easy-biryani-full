@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/Badge";
 import { BrutalistButton } from "@/components/ui/BrutalistButton";
 import { SafeImage } from "@/components/ui/SafeImage";
@@ -19,12 +18,7 @@ export function HeroSection() {
       <div className="hidden md:block absolute bottom-10 left-5 w-16 h-16 bg-secondary/5 border-4 border-secondary/20 -z-10 -rotate-6" />
 
       {/* Left: Copy */}
-      <motion.div
-        className="flex-1 text-left z-10 w-full"
-        initial={{ opacity: 0, x: -40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      <div className="flex-1 text-left z-10 w-full animate-in fade-in slide-in-from-left-10 duration-700">
         <div className="relative inline-block mb-3 sm:mb-4">
           <Badge variant="secondary">Launching first in Chennai colleges</Badge>
         </div>
@@ -61,16 +55,11 @@ export function HeroSection() {
             </span>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Right: Hero Image Polaroid */}
-      <motion.div
-        className="flex-1 relative w-full max-w-sm md:max-w-none"
-        initial={{ opacity: 0, rotate: 6 }}
-        animate={{ opacity: 1, rotate: 3 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-      >
-        <div className="relative transform rotate-2 md:rotate-3 hover:rotate-0 transition-transform duration-500 z-20">
+      <div className="flex-1 relative w-full max-w-sm md:max-w-none animate-in fade-in zoom-in-95 duration-700 delay-200">
+        <div className="relative transform rotate-3 md:rotate-3 hover:rotate-0 transition-transform duration-500 z-20">
           <div className="bg-surface-container-lowest border-4 border-[#333333] polaroid-frame brutalist-shadow tape-strip">
             <SafeImage
               imageKey="hero"
@@ -87,15 +76,11 @@ export function HeroSection() {
         </div>
 
         {/* Floating price tag — desktop only */}
-        <motion.div
-          className="hidden md:flex absolute -top-4 -left-6 bg-secondary text-white font-black text-lg px-4 py-2 border-3 border-[#333333] brutalist-shadow-sm rotate-[-8deg] z-30 items-center gap-1"
-          animate={{ rotate: [-8, -6, -8] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-        >
+        <div className="hidden md:flex absolute -top-4 -left-6 bg-secondary text-white font-black text-lg px-4 py-2 border-3 border-[#333333] brutalist-shadow-sm rotate-[-8deg] z-30 items-center gap-1 animate-bounce-subtle">
           <span className="text-xs line-through opacity-70">&#8377;249</span>
           <span>&#8377;89!</span>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </header>
   );
 }

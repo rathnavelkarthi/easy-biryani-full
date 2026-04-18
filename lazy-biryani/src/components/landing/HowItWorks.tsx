@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { BrutalistCard } from "@/components/ui/BrutalistCard";
 import { SafeImage } from "@/components/ui/SafeImage";
 import type { ImageKey } from "@/lib/gemini-images";
@@ -28,18 +27,6 @@ const steps = [
   },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-};
-
 export function HowItWorks() {
   return (
     <section id="how-it-works" className="py-16 sm:py-24 px-4 sm:px-6 bg-surface-container-low relative">
@@ -56,15 +43,9 @@ export function HowItWorks() {
           </span>
         </div>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {steps.map((step, i) => (
-            <motion.div key={step.num} variants={cardVariants}>
+            <div key={step.num} className="animate-in fade-in slide-in-from-bottom-5 duration-700" style={{ animationDelay: `${i * 150}ms`, animationFillMode: 'both' }}>
               <BrutalistCard hover className="h-full overflow-hidden">
                 <div className="relative">
                   <SafeImage
@@ -93,9 +74,9 @@ export function HowItWorks() {
                   </p>
                 </div>
               </BrutalistCard>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Connecting arrows between cards — desktop only */}
         <div className="hidden md:flex justify-around mt-8 px-16">
