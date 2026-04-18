@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lazy Biryani - Zero Skills. Full Biryani.</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&amp;family=Inter:wght@400;600&amp;family=Caveat:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary-fixed": "#0a2100",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#faf3e2",
+                        "inverse-on-surface": "#f7f0df",
+                        "on-secondary-fixed": "#40000a",
+                        "secondary": "#b71032",
+                        "tertiary-fixed-dim": "#a8d38a",
+                        "on-surface-variant": "#524535",
+                        "primary-fixed-dim": "#ffb95a",
+                        "surface-variant": "#e9e2d2",
+                        "inverse-primary": "#ffb95a",
+                        "surface-bright": "#fff9ec",
+                        "on-tertiary-container": "#35581d",
+                        "surface-dim": "#e0dac9",
+                        "outline": "#847463",
+                        "on-tertiary-fixed-variant": "#2c4f15",
+                        "on-secondary-fixed-variant": "#920023",
+                        "primary-container": "#ffb347",
+                        "surface": "#fff9ec",
+                        "secondary-fixed-dim": "#ffb3b4",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#d6c3b0",
+                        "tertiary-fixed": "#c4efa3",
+                        "on-primary-fixed-variant": "#643f00",
+                        "tertiary": "#43682b",
+                        "primary-fixed": "#ffddb6",
+                        "on-primary-fixed": "#2a1800",
+                        "background": "#fff9ec",
+                        "surface-container": "#f4eddd",
+                        "surface-tint": "#845400",
+                        "on-surface": "#1e1c12",
+                        "secondary-fixed": "#ffdad9",
+                        "surface-container-high": "#eee8d7",
+                        "error-container": "#ffdad6",
+                        "primary": "#845400",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#a4ce85",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#704700",
+                        "on-background": "#1e1c12",
+                        "on-secondary-container": "#fffbff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#333025",
+                        "secondary-container": "#da3148",
+                        "surface-container-highest": "#e9e2d2",
+                        "surface-container-lowest": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"],
+                        "accent": ["Caveat"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .brutalist-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(51, 51, 51, 1);
+        }
+        .brutalist-shadow-hover:hover {
+            box-shadow: 0px 0px 0px 0px rgba(51, 51, 51, 1);
+            transform: translate(4px, 4px);
+        }
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .polaroid-frame {
+            padding: 10px 10px 40px 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#FFF9EC]/80 dark:bg-stone-900/80 backdrop-blur-md border-b-4 border-[#333333] shadow-[4px_4px_0px_0px_rgba(51,51,51,1)] flex justify-between items-center px-6 py-4 max-w-full">
+<div class="text-2xl font-black text-[#845400] dark:text-[#FFB347] tracking-tighter font-['Plus_Jakarta_Sans']">Lazy Biryani</div>
+<div class="flex items-center gap-6">
+<button class="hidden md:block text-[#333333] dark:text-[#FFF9EC] font-black underline decoration-wavy transition-transform duration-200 hover:scale-105">Home</button>
+<button class="hidden md:block text-[#333333] dark:text-[#FFF9EC] font-['Plus_Jakarta_Sans'] hover:scale-105 transition-transform duration-200">The Kit</button>
+<button class="animate-pulse bg-secondary text-white px-6 py-2 rounded-lg border-2 border-[#333333] brutalist-shadow brutalist-shadow-hover font-bold">Pre-order Now - ₹89</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 overflow-visible">
+<div class="flex-1 text-left z-10">
+<div class="relative inline-block mb-4">
+<span class="font-accent text-3xl text-secondary -rotate-3 block">Because hostel mess food is a crime.</span>
+<svg class="absolute -bottom-2 -left-2 w-full h-4 text-primary opacity-30" preserveaspectratio="none" viewbox="0 0 100 10">
+<path d="M0 5 Q 25 0, 50 5 T 100 5" fill="none" stroke="currentColor" stroke-width="2"></path>
+</svg>
+</div>
+<h1 class="text-6xl md:text-8xl font-black font-headline leading-none text-on-surface mb-6 uppercase">
+                Zero Skills.<br/>Full <span class="text-secondary underline decoration-4 underline-offset-8">Biryani.</span><br/>Just Lazy It.
+            </h1>
+<p class="text-xl md:text-2xl font-medium text-on-surface-variant max-w-lg mb-8 leading-relaxed">
+                The ₹89 single-serve biryani kit that takes 15 minutes in a rice cooker. No chopping, no shopping, no crying.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 items-start sm:items-center mb-6">
+<button class="bg-primary-container text-on-primary-container px-10 py-5 text-2xl font-black rounded-lg border-4 border-[#333333] brutalist-shadow brutalist-shadow-hover transition-all">
+                    Pre-order for ₹89
+                </button>
+<div class="flex flex-col">
+<span class="text-lg font-bold flex items-center gap-2">
+                        🔥 Drops next week.
+                    </span>
+<span class="text-on-surface-variant font-bold">4,204 students already waiting.</span>
+</div>
+</div>
+</div>
+<div class="flex-1 relative">
+<div class="relative transform rotate-3 hover:rotate-0 transition-transform duration-500 z-20">
+<div class="bg-surface-container-lowest border-4 border-[#333333] polaroid-frame brutalist-shadow">
+<img alt="The Biryani Kit" class="w-full h-[400px] object-cover" data-alt="overhead shot of a vibrant aromatic chicken biryani in a white bowl with green chilies and spices next to a sleek modern rice cooker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHRY_VepRJ521NBEaYQSpOa2yJ50yDRkUER3z4dxLQhDQDQjXL6R-9e4kv5MIVDO25chpB5ohD22S9AkRt0uTX3yHkPvmHzBpaalobORht6aDq6bOG_u7vhQCpypmXIDyWvVDn0tdik4pOnsfYAJSIlP3s-EBc2GHBrJHHM0187X2Krb2c2mWKgiXhPxpHvsPuFX6LY_oTytyO6EeODt0WBF-PX_tDVyALpcFeZQj9bdDTzclPYXJ1y9TwQ8fxUAE-1gC-WzEXqw8"/>
+<p class="font-accent text-2xl mt-4 text-center text-on-surface">The ultimate life hack 🤤</p>
+</div>=
+</div>
+<!-- Decorative Elements -->
+<span class="absolute -top-10 -right-4 text-6xl animate-bounce">🔥</span>
+<span class="absolute bottom-10 -left-10 text-6xl rotate-12">🥘</span>
+<div class="absolute -bottom-8 right-0 font-accent text-primary text-xl max-w-[150px] leading-tight">
+                "Literally just add water bro"
+            </div>
+</div>
+</header>
+<!-- Marquee Social Proof -->
+<div class="bg-[#333333] py-6 overflow-hidden border-y-4 border-[#333333]">
+<div class="marquee flex gap-20">
+<span class="text-primary-container text-3xl font-black uppercase flex items-center gap-4">Bro, this actually tastes good <span class="material-symbols-outlined">verified</span></span>
+<span class="text-white text-3xl font-black uppercase flex items-center gap-4">Saved me at 2 AM <span class="material-symbols-outlined">nightlight</span></span>
+<span class="text-secondary text-3xl font-black uppercase flex items-center gap-4">Better than Swiggy <span class="material-symbols-outlined">speed</span></span>
+<span class="text-primary-container text-3xl font-black uppercase flex items-center gap-4">Mess food is officially dead <span class="material-symbols-outlined">skull</span></span>
+<span class="text-white text-3xl font-black uppercase flex items-center gap-4">Hostel life upgraded <span class="material-symbols-outlined">upgrade</span></span>
+<!-- Duplicate for infinite effect -->
+<span class="text-primary-container text-3xl font-black uppercase flex items-center gap-4">Bro, this actually tastes good <span class="material-symbols-outlined">verified</span></span>
+<span class="text-white text-3xl font-black uppercase flex items-center gap-4">Saved me at 2 AM <span class="material-symbols-outlined">nightlight</span></span>
+<span class="text-secondary text-3xl font-black uppercase flex items-center gap-4">Better than Swiggy <span class="material-symbols-outlined">speed</span></span>
+</div>
+</div>
+<!-- How It Works -->
+<section class="py-24 px-6 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<h2 class="text-5xl md:text-7xl font-black font-headline text-center mb-16 uppercase">Idiot-Proof Cooking</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Step 1 -->
+<div class="bg-surface p-8 border-4 border-[#333333] brutalist-shadow rounded-lg transform hover:-translate-y-2 transition-transform">
+<div class="w-16 h-16 bg-primary-container flex items-center justify-center border-4 border-[#333333] mb-6 text-2xl font-black">1</div>
+<h3 class="text-3xl font-black mb-4 uppercase">Open the box</h3>
+<p class="text-lg text-on-surface-variant font-medium">Tear it open. Try not to eat the raw masala. It smells too good, we know.</p>
+<img alt="Box opening" class="mt-8 w-full h-48 object-cover border-2 border-[#333333]" data-alt="close up of a modern colorful cardboard package being opened revealing spice packets and premium basmati rice" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBobBkhxTy7hfGG7Z3RQSmmhKSemxntkwq8AaNprRJqGZWGAfKqwJMAxVLRW24aoremSHKe5B_gIUC31UrjUxZobqv8yjaXIp6Et1XY-5aQ1GhynncWQ8B_Iyd1FGXYIX9dFIAPym-BNl13Z-lTqvDkmCaXb0ma1OwjDUx1WSdSSFeZ-TbBeBdUNGrFpO2UcuwRdeMmDwe6ca3T9aUZyizCzR1rje4TuZteZRRsDq59M2zeCNdydZO7zZWZNqUwqkEqcQAF_cPUqsE"/>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface p-8 border-4 border-[#333333] brutalist-shadow rounded-lg transform md:translate-y-8 hover:translate-y-6 transition-transform">
+<div class="w-16 h-16 bg-secondary text-white flex items-center justify-center border-4 border-[#333333] mb-6 text-2xl font-black">2</div>
+<h3 class="text-3xl font-black mb-4 uppercase">Add water &amp; heat</h3>
+<p class="text-lg text-on-surface-variant font-medium">Throw it in a rice cooker, kettle, or whatever electric heating device you smuggled in.</p>
+<img alt="Cooking" class="mt-8 w-full h-48 object-cover border-2 border-[#333333]" data-alt="steam rising from an electric rice cooker in a dimly lit cozy hostel room corner with string lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXGJQsoomu0Kp1jV6VACHEsy5v72GlKJDv1X48RphYWzJ4Vc08ew6r0ELWNC1eVOz-Qs6kTLYExrd9WiVDBKZX9KerXxHjsYU789gNiZc6Spp-ICw5qC7qh-56j6zlIXaN1DFjlKXm6_5GMjcWy4QJ1CXhZfEQZEAN5tiliHtzRvS_vdRl80MNNyhKgbTxYqQnFnDyPnaGdhE9s6Ecq-QLUXfDgViCuMnzfkgcTe--5xyOv3EnWvSMx2pxH0rdI0RCleB2mXPrhOY"/>
+</div>
+<!-- Step 3 -->
+<div class="bg-surface p-8 border-4 border-[#333333] brutalist-shadow rounded-lg transform hover:-translate-y-2 transition-transform">
+<div class="w-16 h-16 bg-tertiary text-white flex items-center justify-center border-4 border-[#333333] mb-6 text-2xl font-black">3</div>
+<h3 class="text-3xl font-black mb-4 uppercase">Eat like a King</h3>
+<p class="text-lg text-on-surface-variant font-medium">15 mins later, authentic dum biryani on your bed. No sharing allowed.</p>
+<img alt="Eating" class="mt-8 w-full h-48 object-cover border-2 border-[#333333]" data-alt="a person sitting cross-legged on a dorm bed holding a steaming plate of biryani with a happy expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7NaQ54CRkRmmaIIV2W2BmRUKA95yUCnxqPKjMD4PyPBNeXMnNMzo6jLGa7BEKT3yn4obFygnCKo4OqoTssX5StbecdZSv2d-Z5EntH03c3uZ3_g9MRoEtpH3gypiv44COta6fWEAz18zuXw3OHVyWwSL-gnGb6msS229Ab3PZqCQgm73EDCdWIuQZmXRFJKghXBbM8pFbsJ04uoHg3DyS-Q5JJENeGphkD-Fov1MGiDYDxPOD9JchJnHxzzSQ0A2c1aqsZiqJC6M"/>
+</div>
+</div>
+</div>
+</section>
+<!-- The Reality Check -->
+<section class="py-24 px-6">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-5xl md:text-7xl font-black font-headline text-center mb-12 uppercase leading-tight">The Reality Check</h2>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse border-4 border-[#333333] brutalist-shadow">
+<thead>
+<tr class="bg-primary-fixed border-b-4 border-[#333333]">
+<th class="p-6 text-left text-2xl font-black border-r-4 border-[#333333]">Option</th>
+<th class="p-6 text-left text-2xl font-black border-r-4 border-[#333333]">Cost</th>
+<th class="p-6 text-left text-2xl font-black border-r-4 border-[#333333]">Time</th>
+<th class="p-6 text-left text-2xl font-black">Experience</th>
+</tr>
+</thead>
+<tbody class="text-xl font-bold">
+<tr class="bg-surface border-b-4 border-[#333333]">
+<td class="p-6 border-r-4 border-[#333333]">Food Apps</td>
+<td class="p-6 border-r-4 border-[#333333]">₹250+ 💸</td>
+<td class="p-6 border-r-4 border-[#333333]">45 mins</td>
+<td class="p-6 text-secondary">Cold &amp; Depressing 👎</td>
+</tr>
+<tr class="bg-surface-container border-b-4 border-[#333333]">
+<td class="p-6 border-r-4 border-[#333333]">Hostel Mess</td>
+<td class="p-6 border-r-4 border-[#333333]">₹0 pain</td>
+<td class="p-6 border-r-4 border-[#333333]">Infinite line</td>
+<td class="p-6 text-on-surface-variant">Cardboard taste 🤮</td>
+</tr>
+<tr class="bg-primary-container">
+<td class="p-6 border-r-4 border-[#333333]">Lazy Biryani</td>
+<td class="p-6 border-r-4 border-[#333333]">₹89 🤑</td>
+<td class="p-6 border-r-4 border-[#333333]">15 mins</td>
+<td class="p-6 text-tertiary">Fresh &amp; Authentic 👑</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Social UGC Grid -->
+<section class="py-24 px-6 bg-surface-container-low overflow-hidden">
+<h2 class="text-5xl md:text-7xl font-black font-headline text-center mb-4 uppercase">Approved by Legends</h2>
+<p class="font-accent text-3xl text-center mb-16 rotate-1">Follow the hype @LazyBiryani</p>
+<div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Polaroid 1 -->
+<div class="bg-surface-container-lowest border-4 border-[#333333] polaroid-frame brutalist-shadow transform -rotate-2 hover:rotate-0 transition-all duration-300">
+<img alt="Student Life" class="w-full h-64 object-cover" data-alt="group of messy-haired college students laughing and eating biryani from shared plates in a crowded dorm room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX8BKWb5lJPLk3iESFQDh-YADIEoGKthKwqmrpCoKGHsAXOJVC1eICXCTkzvaKx2zGbMngeu4gVjuGBxaPXZuAErxuySVhTrdQPx91jxh45xUHHoZsA61O3o53aOETmO0kWfAg6fyL79IQQDmJHgzhFhMx8jrXQP5IFT4qX_0Hyc4p6tJCFjj5f2oiUA4bb0LRDTrjG7VEQrAiobN2opx-wpWba7rKQwJ_vaC7EbwLdYKZ66NaqigdToOmhu_GG29lP0E3MeP1Vhk"/>
+<div class="mt-4 flex items-center justify-between">
+<span class="font-bold">@rahul_bits</span>
+<span class="flex items-center gap-1 text-secondary font-black"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span> 1.2k</span>
+</div>
+<p class="text-sm mt-2">"Mess food is officially cancelled. Lazy Biryani for the win!"</p>
+</div>
+<!-- Polaroid 2 -->
+<div class="bg-surface-container-lowest border-4 border-[#333333] polaroid-frame brutalist-shadow transform rotate-3 hover:rotate-0 transition-all duration-300">
+<img alt="Stocked up" class="w-full h-64 object-cover" data-alt="a shelf in a hostel room overflowing with books, instant noodles, and several vibrant DumHai biryani kit boxes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDc7WlXOloYPkL3PYPBicH2fti79TrQZmA9NCFJM-qbqmSx1xhLXKgQ1jLvn81TxwNm0p1xqwlIsYHMoCWN9hbU6NHi1tJo4WVrkcD7mTQIy_Fc7KECxs_R8CSLk9eJ7Tzpsef7pzR7JxqQesyUp2TES0vNbCWKTRUY7847gdw0lhwWjNDCQPkUa1XsxVM97EYS8zZ-Y_LS2Gl69UP6B1dHPviHOHpS0yI7Zl9dac-v4Z2orguWH8ue-_2A8DpXWr5j797-y111JiE"/>
+<div class="mt-4 flex items-center justify-between">
+<span class="font-bold">@sneha_vit</span>
+<span class="flex items-center gap-1 text-secondary font-black"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span> 842</span>
+</div>
+<p class="text-sm mt-2">"Stocking up before the exam week. Only survival kit needed."</p>
+</div>
+<!-- Polaroid 3 -->
+<div class="bg-surface-container-lowest border-4 border-[#333333] polaroid-frame brutalist-shadow transform -rotate-1 hover:rotate-0 transition-all duration-300">
+<img alt="Close up biryani" class="w-full h-64 object-cover" data-alt="extreme close up of golden biryani rice with large pieces of tender meat and fried onions, high contrast editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXnksxnJCPuF1qPuoXenkWbpMFhFO8uVN5ZtkuaXA1U0OTWTHRNEMVma9Le-sujaIjX0g6cLncR2xQiKUNgykDIAdAsuvrcFW52EGyztxo9AV80sxN8c5YPkUgLshzrWqEpQ7PxZ2RyZ85o3pugRPr36_7Q9mq6i6QZ__C8FQ7R7sb3UMXuKJWGH4XcjhdWPWcflRVsmgqH3M9CsJNwUt4x8wFQyMR2RTuWnBLNEqThozYqJzUCVvtJmL3aDF8INPA-Bp6kfKNXvQ"/>
+<div class="mt-4 flex items-center justify-between">
+<span class="font-bold">@foodie_backbench</span>
+<span class="flex items-center gap-1 text-secondary font-black"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span> 2.5k</span>
+</div>
+<p class="text-sm mt-2">"Can you believe this came out of a rice cooker? 🤯"</p>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-32 px-6 relative overflow-hidden">
+<div class="absolute inset-0 bg-primary opacity-10 -z-10"></div>
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-6xl md:text-8xl font-black font-headline mb-8 uppercase leading-none">Stop scrolling.<br/><span class="text-secondary">Start cooking.</span></h2>
+<p class="text-2xl font-bold mb-12 text-on-surface-variant">We're launching in limited batches. Get on the VIP list to snag your kits at ₹89 before prices jump.</p>
+<div class="flex flex-col md:flex-row items-stretch justify-center gap-4 max-w-2xl mx-auto">
+<input class="flex-1 bg-surface border-4 border-[#333333] px-6 py-4 text-xl font-bold brutalist-shadow focus:outline-none focus:ring-0 focus:border-primary" placeholder="Your WhatsApp (No spam, just spice)" type="text"/>
+<button class="bg-secondary text-white px-10 py-4 text-2xl font-black rounded-lg border-4 border-[#333333] brutalist-shadow brutalist-shadow-hover transition-all">
+                    Join Waitlist
+                </button>
+</div>
+<div class="mt-8 flex items-center justify-center gap-4 opacity-70 font-bold">
+<span class="material-symbols-outlined">verified_user</span>
+                Encrypted &amp; Secure. We hate spam too.
+            </div>
+</div>
+<!-- Large Floating Emoji Decor -->
+<span class="absolute top-20 left-10 text-9xl opacity-10 select-none">🥘</span>
+<span class="absolute bottom-20 right-10 text-9xl opacity-10 select-none">🚀</span>
+</section>
+<!-- Footer -->
+<footer class="bg-[#845400] dark:bg-[#43682B] w-full mt-20 border-t-4 border-[#333333] flex flex-col items-center justify-center py-12 px-8 gap-6 text-center">
+<div class="text-3xl font-black text-[#FFB347] font-headline">Lazy Biryani</div>
+<div class="flex flex-wrap justify-center gap-8 text-[#FFF9EC] font-['Plus_Jakarta_Sans'] text-sm uppercase tracking-widest">
+<a class="hover:text-[#FFB347] transition-colors" href="#">Join Waitlist</a>
+<a class="hover:text-[#FFB347] transition-colors" href="#">WhatsApp Support</a>
+<a class="hover:text-[#FFB347] transition-colors" href="#">Shipping Policy</a>
+<a class="hover:text-[#FFB347] transition-colors" href="#">Refunds</a>
+</div>
+<div class="text-[#FFF9EC]/80 font-['Plus_Jakarta_Sans'] text-sm uppercase tracking-widest mt-4">
+            © 2024 Lazy Biryani. Spicing up hostel life.
+        </div>
+<div class="mt-4 flex gap-4">
+<span class="w-10 h-10 bg-[#FFB347] border-2 border-[#333333] flex items-center justify-center brutalist-shadow hover:translate-y-1 transition-all">
+<img alt="IG" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlMZlVb082nfTsO6UOos9x2eCjh0JiMSDAnkugyqpoaA1PDdmxP0nQbvmS424K3uMlhBv_s-StQs5hW7ffrioqgT3M4JXbvdpbZjDaUKv5vKAL7aV3aLQ-af4_l6ymmiuKgJvw65xUHBYA2k2CzAiSkdrPICW3lHDn1VZZzQn1g7iuJruCPycdy3SH709VfssDMM2iHvSgRiNhbBxSFi4aMxrsh3TkX-0oHjKw1lzd1ZfAtY4wW2GXuSj5Vajtj5jbtfa-LJkzbXA"/>
+</span>
+<span class="w-10 h-10 bg-[#FFB347] border-2 border-[#333333] flex items-center justify-center brutalist-shadow hover:translate-y-1 transition-all">
+<img alt="TW" class="w-6 h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUGjoWfDe_DJ2aK5WLMSn0VIdISFduAdicxQTwNZqPyKKjGO6UcthEBGD7P2KBRifqTmLTCITB25OWHgvv78AEAgt2sYWta2T40Q7vSNG5ZEjfvIeUqESzb7ha08DRGONkrIc0DvdzjfZbNtG5lsjzLycOq7yKru79MU3aFd-CcDWUr6ywxzjHPsxuDUOSrieqehEabv2L2k-0SfMtspPgDuERiE77EQh7NqvWM9anY_OTI-EqXKQ7JmrDrSUVYaYZ0iSl6KmhQTE"/>
+</span>
+</div>
+</footer>
+</body></html>
