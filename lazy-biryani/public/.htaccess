@@ -4,8 +4,8 @@ DirectoryIndex index.html
   RewriteEngine On
   RewriteBase /
 
-  # Ensure _next folder is accessible
-  RewriteRule ^_next/(.*)$ _next/$1 [L]
+  # Force allow access to next (was _next)
+  RewriteRule ^(next|images)/(.*)$ - [L]
 
   # Redirect /index.html to /
   RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
@@ -15,29 +15,28 @@ DirectoryIndex index.html
   RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
 
-  # If trailingSlash: true is used, check for directory/index.html
+  # Handle subpages with trailing slashes
   RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
   RewriteRule ^(.*)/?$ $1/index.html [L]
 
-  # Clean URLs: handle cases without trailing slash
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME}.html -f
-  RewriteRule ^(.*)$ $1.html [L]
-
-  # SPA Fallback for client-side routing
+  # SPA Fallback
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [L]
 </IfModule>
 
-ErrorDocument 404 /404.html
+# MIME types
+<IfModule mod_mime.c>
+  AddType text/css .css
+  AddType application/javascript .js
+  AddType image/svg+xml .svg
+</IfModule>
 
-# Security: Allow access to _next directory (some hosts block it)
+# Allow access to hidden folders (like _next)
 <IfModule mod_authz_core.c>
-  <FilesMatch "^_next">
+  <RequireAll>
     Require all granted
-  </FilesMatch>
+  </RequireAll>
 </IfModule>
 
 # Cache static assets aggressively
