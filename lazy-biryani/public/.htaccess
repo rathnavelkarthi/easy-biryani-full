@@ -1,5 +1,27 @@
 DirectoryIndex index.html
 
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Redirect /index.html to /
+  RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+  RewriteRule ^index\.html$ / [R=301,L]
+
+  # If the request is for a file or directory that exists, serve it
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # If trailingSlash: true is used in next.config.ts, we need to handle subfolder index.html files
+  # This rule checks if a directory/index.html exists for a request and serves it
+  RewriteCond %{DOCUMENT_ROOT}/$1/index.html -f
+  RewriteRule ^(.*)/?$ $1/index.html [L]
+
+  # Fallback: Send everything else to index.html for client-side routing
+  RewriteRule ^ index.html [L]
+</IfModule>
+
 ErrorDocument 404 /404.html
 
 # Cache static assets aggressively
